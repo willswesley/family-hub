@@ -359,29 +359,6 @@ async function loadNews() {
     }
   }
 
-  // Science & Nature — try multiple sources
-  const scienceSources = [
-    "https://feeds.skynews.com/feeds/rss/science.xml",
-    "https://www.sciencenews.org/feed",
-    "https://www.space.com/feeds/all",
-    "https://earthsky.org/feed",
-    "https://www.livescience.com/feeds/all"
-  ];
-  let scienceItems = null;
-  for (const sciUrl of scienceSources) {
-    scienceItems = await fetchRSS(sciUrl, 3);
-    if (scienceItems && scienceItems.length) break;
-  }
-  if (scienceItems && scienceItems.length) {
-    const stories = scienceItems.map(item => `
-      <div class="news-story">
-        <a class="news-headline" href="${item.link}" target="_blank">${item.title}</a>
-        ${item.desc ? `<p class="news-desc">${item.desc}${item.desc.length >= 180 ? '…' : ''}</p>` : ''}
-      </div>`).join('');
-    html += `<div class="news-card"><div class="news-card-header"><span class="news-card-icon">🔭</span><span class="news-card-title">Science, Nature & Space</span></div><div class="news-card-body">${stories}</div></div>`;
-  } else {
-    html += `<div class="news-card"><div class="news-card-header"><span class="news-card-icon">🔭</span><span class="news-card-title">Science, Nature & Space</span></div><div class="news-card-body"><p class="news-desc" style="opacity:0.6;">Could not load feed — tap refresh to try again.</p></div></div>`;
-  }
 
   html += await buildMarketsCard();
 
