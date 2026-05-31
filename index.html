@@ -60,6 +60,16 @@
   .weather-rain    { background: linear-gradient(135deg, #4b79a1, #283e51); color: #fff; }
   .weather-snow    { background: linear-gradient(135deg, #e0eafc, #cfdef3); color: #2c3e50; }
   .weather-storm   { background: linear-gradient(135deg, #373b44, #4286f4); color: #fff; }
+  /* Night themes */
+  .weather-night-clear   { background: linear-gradient(135deg, #1a1a2e, #16213e); color: #c8d6e5; }
+  .weather-night-partly  { background: linear-gradient(135deg, #2c3e50, #34495e); color: #c8d6e5; }
+  .weather-night-cloudy  { background: linear-gradient(135deg, #2d3436, #636e72); color: #dfe6e9; }
+  .weather-night-fog     { background: linear-gradient(135deg, #3d4146, #535c64); color: #dfe6e9; }
+  .weather-night-drizzle { background: linear-gradient(135deg, #2c3e50, #4a6274); color: #dfe6e9; }
+  .weather-night-rain    { background: linear-gradient(135deg, #1c2b3a, #2d4a63); color: #dfe6e9; }
+  /* Twilight themes — sunrise/sunset */
+  .weather-twilight       { background: linear-gradient(135deg, #fd7c56, #9b59b6); color: #fff; }
+  .weather-twilight-cloud { background: linear-gradient(135deg, #b07fbf, #7f8c8d); color: #fff; }
   .weather-loading { background: rgba(255,255,255,0.2); color: #fff; }
 
   .refresh-btn { font-size: 12px; font-weight: 600; color: #fff; cursor: pointer; background: rgba(255,255,255,0.2); border: 0.5px solid rgba(255,255,255,0.4); border-radius: 6px; padding: 4px 10px; display: flex; align-items: center; gap: 4px; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
@@ -74,34 +84,9 @@
   .fx-updated { font-size: 9px; color: rgba(255,255,255,0.5); margin-top: 2px; }
   .fx-loading { opacity: 0.5; font-size: 13px; }
 
-  /* News Feed */
-  .news-card { background: rgba(255,255,255,0.18); backdrop-filter: blur(6px); border: 0.5px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 1rem 1.1rem; margin-bottom: 10px; }
-  .news-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-  .news-card-icon { font-size: 18px; }
-  .news-card-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.75); }
-  .news-card-body { font-size: 13px; font-weight: 500; color: #fff; line-height: 1.65; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
-  .news-card-body p { margin-bottom: 6px; }
-  .news-card-body p:last-child { margin-bottom: 0; }
-  .news-loading { background: rgba(255,255,255,0.12); border-radius: 12px; padding: 1.5rem; text-align: center; }
-  .news-loading p { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
-  .news-spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.8s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .news-timestamp { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 10px; text-align: right; }
-  .news-story { padding: 8px 0; border-bottom: 0.5px solid rgba(255,255,255,0.15); }
-  .news-story:last-child { border-bottom: none; padding-bottom: 0; }
-  .news-story:first-child { padding-top: 0; }
-  .news-headline { font-size: 13px; font-weight: 700; color: #fff; text-decoration: none; line-height: 1.4; display: block; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
-  .news-headline:hover { text-decoration: underline; }
-  .news-desc { font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.75); margin-top: 3px; line-height: 1.5; }
-  .news-market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px; }
-  .news-market-item { background: rgba(255,255,255,0.12); border-radius: 8px; padding: 0.5rem 0.7rem; }
-  .news-market-label { font-size: 10px; font-weight: 600; color: rgba(255,255,255,0.65); margin-bottom: 2px; }
-  .news-market-value { font-size: 15px; font-weight: 700; color: #fff; }
-  .news-market-change { font-size: 10px; font-weight: 600; margin-top: 1px; }
-  .up { color: #6ee7a0; }
-  .down { color: #f87171; }
-
   /* Drive */
+  .wedding-card { display: flex; background: rgba(255,255,255,0.25); border: 0.5px solid rgba(255,255,255,0.45); }
+  .drive-col-small { width: 50%; }
   .drive-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .drive-col { display: flex; flex-direction: column; gap: 8px; }
   .drive-card { background: rgba(255,255,255,0.18); backdrop-filter: blur(6px); border: 0.5px solid rgba(255,255,255,0.3); border-radius: 12px; padding: 0.85rem 1rem; display: flex; align-items: center; gap: 10px; text-decoration: none; transition: background 0.15s; cursor: pointer; width: 100%; }
@@ -147,43 +132,62 @@
 
   <!-- Google Drive -->
   <div class="section">
-    <p class="section-label"><i class="ti ti-brand-google-drive"></i> Google Drive</p>
+    <p class="section-label"><i class="ti ti-link"></i> Key Links</p>
     <hr class="divider">
-    <div class="drive-row">
-      <div class="drive-col">
-        <div class="drive-card" onclick="toggleSubfolders(this)">
-          <i class="ti ti-folder drive-icon"></i>
-          <div style="overflow:hidden;"><p class="drive-name">Family Photos</p><p class="drive-type">Folder</p></div>
-          <i class="ti ti-chevron-down drive-chevron"></i>
+    <!-- 3 columns matching weather card style -->
+    <div class="weather-grid" style="margin-bottom:0;">
+
+      <!-- Phil & Quin Wedding -->
+      <a class="weather-card" href="https://sayi.do/public/view-announcement/xlyDiZePEHgr7ONjwbRQLMgUJOw1/2026-02-14T141449425Z_41001cdb-89e8-bfb6-d7b8-80b4384ac217?party=-OPUQeQ9_MT6Ug7gDTMD&person=00000002-108c-1e7c-9d53-3d9a851aeb8b" target="_blank" style="background:linear-gradient(135deg,#7b0000,#e53e3e);color:#fff;text-decoration:none;display:block;">
+        <div class="w-top">
+          <span class="w-emoji">💍</span>
+          <div class="w-right"><p class="city" style="color:#fff;">Phil & Quin</p></div>
         </div>
-        <div class="subfolders">
+        <p class="desc" style="margin-top:6px;">Wedding link</p>
+      </a>
+
+      <!-- Family Photos -->
+      <div style="position:relative;">
+        <div class="weather-card" onclick="var s=this.nextElementSibling;s.classList.toggle('open');" style="background:linear-gradient(135deg,#a1c4fd,#c2e9fb);color:#2a3a5a;cursor:pointer;">
+          <div class="w-top">
+            <span class="w-emoji">📸</span>
+            <div class="w-right"><p class="city" style="color:#2a3a5a;">Family Photos</p></div>
+          </div>
+          <p class="desc" style="margin-top:6px;">Google Drive</p>
+        </div>
+        <div class="subfolders" style="position:static;margin-top:6px;">
           <a class="subfolder-card" href="https://drive.google.com/drive/folders/14nz8obfHI1LyIg-fKtQv_alnEp5Y4UP9?usp=share_link" target="_blank">
-            <i class="ti ti-heart drive-icon" style="font-size:17px;"></i>
-            <div><p class="subfolder-name">Sue and Wes Wedding Pics</p><p class="subfolder-type">Folder</p></div>
+            <i class="ti ti-heart drive-icon" style="font-size:15px;"></i>
+            <div><p class="subfolder-name" style="font-size:11px;">Sue & Wes Wedding Pics</p><p class="subfolder-type">Folder</p></div>
           </a>
           <a class="subfolder-card" href="https://drive.google.com/drive/folders/18-ae-czjCLnafNJDQf-MZn2G0C8Biq8s?usp=share_link" target="_blank">
-            <i class="ti ti-folder drive-icon" style="font-size:17px;"></i>
-            <div><p class="subfolder-name">General</p><p class="subfolder-type">Folder</p></div>
+            <i class="ti ti-folder drive-icon" style="font-size:15px;"></i>
+            <div><p class="subfolder-name" style="font-size:11px;">General</p><p class="subfolder-type">Folder</p></div>
           </a>
         </div>
       </div>
-      <div class="drive-col">
-        <div class="drive-card" onclick="toggleSubfolders(this)">
-          <i class="ti ti-plane drive-icon"></i>
-          <div style="overflow:hidden;"><p class="drive-name">Travel Docs</p><p class="drive-type">Folder</p></div>
-          <i class="ti ti-chevron-down drive-chevron"></i>
+
+      <!-- Travel Docs -->
+      <div style="position:relative;">
+        <div class="weather-card" onclick="var s=this.nextElementSibling;s.classList.toggle('open');" style="background:linear-gradient(135deg,#bdc3c7,#95a5a6);color:#2c3e50;cursor:pointer;">
+          <div class="w-top">
+            <span class="w-emoji">✈️</span>
+            <div class="w-right"><p class="city" style="color:#2c3e50;">Travel Docs</p></div>
+          </div>
+          <p class="desc" style="margin-top:6px;">Google Drive</p>
         </div>
-        <div class="subfolders">
+        <div class="subfolders" style="position:static;margin-top:6px;">
           <a class="subfolder-card" href="https://drive.google.com/drive/folders/1UZpYrRQMY9uSDLr1A6VophHqdKkepj7t?usp=share_link" target="_blank">
-            <i class="ti ti-user drive-icon" style="font-size:17px;"></i>
-            <div><p class="subfolder-name">Sue</p><p class="subfolder-type">Folder</p></div>
+            <i class="ti ti-user drive-icon" style="font-size:15px;"></i>
+            <div><p class="subfolder-name" style="font-size:11px;">Sue</p><p class="subfolder-type">Folder</p></div>
           </a>
           <a class="subfolder-card" href="https://drive.google.com/drive/folders/1-4_pVhMLrCaVD1fpqv2st40-fse2ioUx?usp=share_link" target="_blank">
-            <i class="ti ti-user drive-icon" style="font-size:17px;"></i>
-            <div><p class="subfolder-name">Wes</p><p class="subfolder-type">Folder</p></div>
+            <i class="ti ti-user drive-icon" style="font-size:15px;"></i>
+            <div><p class="subfolder-name" style="font-size:11px;">Wes</p><p class="subfolder-type">Folder</p></div>
           </a>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -200,15 +204,6 @@
     </div>
   </div>
 
-  <!-- News Feed -->
-  <div class="section">
-    <div style="display:flex;align-items:center;justify-content:space-between;">
-      <p class="section-label"><i class="ti ti-news"></i> News Feed</p>
-      <button class="refresh-btn" onclick="loadNews()"><i class="ti ti-refresh"></i> refresh</button>
-    </div>
-    <hr class="divider">
-    <div id="news-feed"></div>
-  </div>
 
 </div>
 <script>
@@ -226,17 +221,101 @@ const locations = [
   { name: "New York, USA", lat: 40.7128,  lon: -74.0060,  tz: "America/New_York" },
   { name: "Taiwan",        lat: 25.0330,  lon: 121.5654,  tz: "Asia/Taipei" }
 ];
-const weatherEmoji = {0:"☀️",1:"☀️",2:"⛅",3:"☁️",45:"🌫️",48:"🌫️",51:"🌦️",53:"🌦️",55:"🌦️",61:"🌧️",63:"🌧️",65:"🌧️",71:"❄️",73:"❄️",75:"❄️",80:"🌧️",81:"🌧️",82:"🌧️",95:"⛈️",96:"⛈️",99:"⛈️"};
-const weatherDesc = {0:"Clear sky",1:"Mainly clear",2:"Partly cloudy",3:"Overcast",45:"Foggy",48:"Icy fog",51:"Light drizzle",53:"Drizzle",55:"Heavy drizzle",61:"Light rain",63:"Moderate rain",65:"Heavy rain",71:"Light snow",73:"Snow",75:"Heavy snow",80:"Rain showers",81:"Rain showers",82:"Violent rain",95:"Thunderstorm",96:"Thunderstorm",99:"Thunderstorm"};
-function weatherTheme(code) {
-  if ([0,1].includes(code)) return 'weather-sunny';
-  if ([2].includes(code)) return 'weather-partly';
-  if ([3].includes(code)) return 'weather-cloudy';
-  if ([45,48].includes(code)) return 'weather-fog';
-  if ([51,53,55].includes(code)) return 'weather-drizzle';
+const weatherEmojiDay = {0:"☀️",1:"☀️",2:"⛅",3:"☁️",45:"🌫️",48:"🌫️",51:"🌦️",53:"🌦️",55:"🌦️",61:"🌧️",63:"🌧️",65:"🌧️",71:"❄️",73:"❄️",75:"❄️",80:"🌧️",81:"🌧️",82:"🌧️",95:"⛈️",96:"⛈️",99:"⛈️"};
+const weatherEmojiNight = {0:"MOON",1:"MOON",2:"MOON",3:"☁️",45:"🌫️",48:"🌫️",51:"🌧️",53:"🌧️",55:"🌧️",61:"🌧️",63:"🌧️",65:"🌧️",71:"❄️",73:"❄️",75:"❄️",80:"🌧️",81:"🌧️",82:"🌧️",95:"⛈️",96:"⛈️",99:"⛈️"};
+function getMoonPhaseEmoji() {
+  const ref = new Date('2000-01-06T18:14:00Z');
+  const synodicMonth = 29.53058867;
+  const phase = (((new Date() - ref) / 86400000) % synodicMonth + synodicMonth) % synodicMonth;
+  const f = phase / synodicMonth;
+  if (f < 0.033) return '🌑';
+  if (f < 0.133) return '🌒';
+  if (f < 0.233) return '🌓';
+  if (f < 0.367) return '🌔';
+  if (f < 0.467) return '🌕';
+  if (f < 0.567) return '🌖';
+  if (f < 0.700) return '🌗';
+  if (f < 0.833) return '🌘';
+  return '🌑';
+}
+function isNightTime(tz) {
+  const h = parseInt(new Intl.DateTimeFormat('en-GB',{hour:'numeric',hour12:false,timeZone:tz}).format(new Date()));
+  return h < 6 || h >= 20;
+}
+function isTwilightTime(tz) {
+  const h = parseInt(new Intl.DateTimeFormat('en-GB',{hour:'numeric',hour12:false,timeZone:tz}).format(new Date()));
+  return (h >= 5 && h < 7) || (h >= 19 && h < 21);
+}
+function getWeatherEmoji(code, tz) {
+  if (isNightTime(tz)) {
+    const e = weatherEmojiNight[code] || '🌙';
+    return e === 'MOON' ? getMoonPhaseEmoji() : e;
+  }
+  return weatherEmojiDay[code] || '🌡️';
+}
+function getWeatherEmojiEx(code, isNight) {
+  if (isNight) {
+    const e = weatherEmojiNight[code] || '🌙';
+    return e === 'MOON' ? getMoonPhaseEmoji() : e;
+  }
+  return weatherEmojiDay[code] || '🌡️';
+}
+function weatherThemeEx(code, isNight, isTwilight) {
+  if (isNight) {
+    if ([0,1].includes(code))               return 'weather-night-clear';
+    if ([2].includes(code))                 return 'weather-night-partly';
+    if ([3].includes(code))                 return 'weather-night-cloudy';
+    if ([45,48].includes(code))             return 'weather-night-fog';
+    if ([51,53,55].includes(code))          return 'weather-night-drizzle';
+    if ([61,63,65,80,81,82].includes(code)) return 'weather-night-rain';
+    if ([71,73,75].includes(code))          return 'weather-snow';
+    if ([95,96,99].includes(code))          return 'weather-storm';
+    return 'weather-night-cloudy';
+  }
+  if (isTwilight) {
+    if ([0,1,2].includes(code))             return 'weather-twilight';
+    if ([3].includes(code))                 return 'weather-twilight-cloud';
+  }
+  if ([0,1].includes(code))               return 'weather-sunny';
+  if ([2].includes(code))                 return 'weather-partly';
+  if ([3].includes(code))                 return 'weather-cloudy';
+  if ([45,48].includes(code))             return 'weather-fog';
+  if ([51,53,55].includes(code))          return 'weather-drizzle';
   if ([61,63,65,80,81,82].includes(code)) return 'weather-rain';
-  if ([71,73,75].includes(code)) return 'weather-snow';
-  if ([95,96,99].includes(code)) return 'weather-storm';
+  if ([71,73,75].includes(code))          return 'weather-snow';
+  if ([95,96,99].includes(code))          return 'weather-storm';
+  return 'weather-cloudy';
+}
+const weatherDesc = {0:"Clear sky",1:"Mainly clear",2:"Partly cloudy",3:"Overcast",45:"Foggy",48:"Icy fog",51:"Light drizzle",53:"Drizzle",55:"Heavy drizzle",61:"Light rain",63:"Moderate rain",65:"Heavy rain",71:"Light snow",73:"Snow",75:"Heavy snow",80:"Rain showers",81:"Rain showers",82:"Violent rain",95:"Thunderstorm",96:"Thunderstorm",99:"Thunderstorm"};
+function weatherTheme(code, tz) {
+  const night = isNightTime(tz);
+  const twilight = isTwilightTime(tz);
+  if (night) {
+    // Night themes — darker versions
+    if ([0,1].includes(code))               return 'weather-night-clear';
+    if ([2].includes(code))                 return 'weather-night-partly';
+    if ([3].includes(code))                 return 'weather-night-cloudy';
+    if ([45,48].includes(code))             return 'weather-night-fog';
+    if ([51,53,55].includes(code))          return 'weather-night-drizzle';
+    if ([61,63,65,80,81,82].includes(code)) return 'weather-night-rain';
+    if ([71,73,75].includes(code))          return 'weather-snow';
+    if ([95,96,99].includes(code))          return 'weather-storm';
+    return 'weather-night-cloudy';
+  }
+  if (twilight) {
+    // Sunrise/sunset — warm amber/purple tones
+    if ([0,1,2].includes(code))             return 'weather-twilight';
+    if ([3].includes(code))                 return 'weather-twilight-cloud';
+  }
+  // Daytime
+  if ([0,1].includes(code))               return 'weather-sunny';
+  if ([2].includes(code))                 return 'weather-partly';
+  if ([3].includes(code))                 return 'weather-cloudy';
+  if ([45,48].includes(code))             return 'weather-fog';
+  if ([51,53,55].includes(code))          return 'weather-drizzle';
+  if ([61,63,65,80,81,82].includes(code)) return 'weather-rain';
+  if ([71,73,75].includes(code))          return 'weather-snow';
+  if ([95,96,99].includes(code))          return 'weather-storm';
   return 'weather-cloudy';
 }
 function localTime(tz) {
@@ -253,11 +332,11 @@ async function loadWeather() {
   for (let i = 0; i < locations.length; i++) {
     const loc = locations[i];
     try {
-      const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current=temperature_2m,apparent_temperature,weather_code&temperature_unit=celsius`);
+      const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current=temperature_2m,apparent_temperature,weather_code&temperature_unit=celsius&daily=sunrise,sunset&timezone=${encodeURIComponent(loc.tz)}&forecast_days=1`);
       const data = await res.json();
       const c = data.current;
-      const theme = weatherTheme(c.weather_code);
-      cards.push(`<div class="weather-card ${theme}"><div class="w-top"><span class="w-emoji">${weatherEmoji[c.weather_code]||"🌡️"}</span><div class="w-right"><p class="city">${loc.name}</p><p class="local-time-label">Local time</p><p class="local-time" id="clock-${i}">${localTime(loc.tz)}</p></div></div><p class="temp">${Math.round(c.temperature_2m)}°C</p><p class="desc">${weatherDesc[c.weather_code]||"Unknown"}</p><p class="feels">Feels like ${Math.round(c.apparent_temperature)}°C</p></div>`);
+      const theme = weatherTheme(c.weather_code, loc.tz);
+      cards.push(`<div class="weather-card ${theme}"><div class="w-top"><span class="w-emoji">${getWeatherEmoji(c.weather_code, loc.tz)}</span><div class="w-right"><p class="city">${loc.name}</p><p class="local-time-label">Local time</p><p class="local-time" id="clock-${i}">${localTime(loc.tz)}</p></div></div><p class="temp">${Math.round(c.temperature_2m)}°C</p><p class="desc">${weatherDesc[c.weather_code]||"Unknown"}</p><p class="feels">Feels like ${Math.round(c.apparent_temperature)}°C</p></div>`);
     } catch {
       cards.push(`<div class="weather-card weather-cloudy"><p class="city">${loc.name}</p><p class="local-time" id="clock-${i}">${localTime(loc.tz)}</p><p style="font-size:11px;">Could not load</p></div>`);
     }
@@ -297,235 +376,22 @@ async function loadFX() {
 document.getElementById("date-display").textContent = new Date().toLocaleDateString("en-GB", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
 loadWeather();
 loadFX();
-loadNews();
-
-async function loadNews() {
-  const feed = document.getElementById("news-feed");
-  feed.innerHTML = `<div class="news-loading"><div class="news-spinner"></div><p style="margin-top:10px;">Loading news feeds...</p></div>`;
-
-  const feeds = [
-    { title: "Geopolitical Update", icon: "🌍", url: "https://feeds.bbci.co.uk/news/world/rss.xml", count: 4 },
-    { title: "UK Developments",     icon: "🇬🇧", url: "https://feeds.bbci.co.uk/news/uk/rss.xml", count: 4 },
-    { title: "South Africa",        icon: "🇿🇦", url: "https://www.dailymaverick.co.za/feed/", count: 4 },
-
-  ];
-
-  async function fetchRSS(url, count, fallbackUrl) {
-    const urlsToTry = fallbackUrl ? [url, fallbackUrl] : [url];
-    for (const feedUrl of urlsToTry) {
-      const proxies = [
-        `https://corsproxy.io/?${encodeURIComponent(feedUrl)}`,
-        `https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}`,
-        `https://api.allorigins.win/get?url=${encodeURIComponent(feedUrl)}`,
-        `https://thingproxy.freeboard.io/fetch/${feedUrl}`
-      ];
-      for (const proxy of proxies) {
-        try {
-          const res = await fetch(proxy, { signal: AbortSignal.timeout(9000) });
-          if (!res.ok) continue;
-          let text = await res.text();
-          // allorigins /get wraps in JSON
-          if (proxy.includes('/get?url')) {
-            try { text = JSON.parse(text).contents; } catch(e) {}
-          }
-          if (!text || !text.includes('<item')) continue;
-          const parser = new DOMParser();
-          const xml = parser.parseFromString(text, "text/xml");
-          const items = [...xml.querySelectorAll("item")].slice(0, count);
-          if (!items.length) continue;
-          return items.map(item => ({
-            title: item.querySelector("title")?.textContent?.trim() || "",
-            link:  item.querySelector("link")?.textContent?.trim() || "#",
-            desc:  (item.querySelector("description")?.textContent || "").replace(/<[^>]+>/g,"").trim().slice(0,180)
-          }));
-        } catch(e) { continue; }
-      }
-    }
-    return null;
-  }
-
-  let html = "";
-  for (const f of feeds) {
-    const items = await fetchRSS(f.url, f.count, f.fallback);
-    if (items && items.length) {
-      const stories = items.map(item => `
-        <div class="news-story">
-          <a class="news-headline" href="${item.link}" target="_blank">${item.title}</a>
-          ${item.desc ? `<p class="news-desc">${item.desc}${item.desc.length >= 180 ? '…' : ''}</p>` : ''}
-        </div>`).join('');
-      html += `<div class="news-card"><div class="news-card-header"><span class="news-card-icon">${f.icon}</span><span class="news-card-title">${f.title}</span></div><div class="news-card-body">${stories}</div></div>`;
-    } else {
-      html += `<div class="news-card"><div class="news-card-header"><span class="news-card-icon">${f.icon}</span><span class="news-card-title">${f.title}</span></div><div class="news-card-body"><p class="news-desc" style="opacity:0.6;">Could not load feed — tap refresh to try again.</p></div></div>`;
-    }
-  }
 
 
-  html += await buildMarketsCard();
-
-  const now = new Date().toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
-  html += `<p class="news-timestamp">Updated at ${now}</p>`;
-  feed.innerHTML = html;
-}
-
-async function buildMarketsCard() {
-  let items = [];
-  try {
-    const res = await fetch('https://api.exchangerate-api.com/v4/latest/GBP');
-    const data = await res.json();
-    items.push({ label: "GBP / ZAR", value: data.rates['ZAR']?.toFixed(2), flag: "🇿🇦" });
-    items.push({ label: "GBP / USD", value: data.rates['USD']?.toFixed(2), flag: "🇺🇸" });
-  } catch(e) {}
-  try {
-    const res = await fetch('https://api.metals.live/v1/spot/gold');
-    const data = await res.json();
-    const price = data[0]?.price;
-    if (price) items.push({ label: "Gold / oz", value: "$" + price.toFixed(0), flag: "🥇" });
-  } catch(e) {}
-  try {
-    const res = await fetch('https://api.metals.live/v1/spot/oil');
-    const data = await res.json();
-    const price = data[0]?.price;
-    if (price) items.push({ label: "Oil / bbl", value: "$" + price.toFixed(2), flag: "🛢️" });
-  } catch(e) {}
-  if (!items.length) return '';
-  const tiles = items.map(item => `
-    <div class="news-market-item">
-      <p class="news-market-label">${item.flag} ${item.label}</p>
-      <p class="news-market-value">${item.value || '—'}</p>
-    </div>`).join('');
-  return `<div class="news-card"><div class="news-card-header"><span class="news-card-icon">📈</span><span class="news-card-title">Market Indicators</span></div><div class="news-market-grid">${tiles}</div></div>`;
-}
-
-
-
-
+document.getElementById("date-display").textContent = new Date().toLocaleDateString("en-GB", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
 loadWeather();
 loadFX();
-loadNews();
 
-async function loadNews() {
-  const feed = document.getElementById("news-feed");
-  feed.innerHTML = `<div class="news-loading"><div class="news-spinner"></div><p style="margin-top:10px;">Generating your briefing...</p><p>This takes about 15 seconds</p></div>`;
+document.getElementById("date-display").textContent = new Date().toLocaleDateString("en-GB", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
+loadWeather();
+loadFX();
 
-  // Fetch market data in parallel
-  let marketData = { gbpzar: null, gbpusd: null, gold: null, oil: null };
-  try {
-    const fxRes = await fetch('https://api.exchangerate-api.com/v4/latest/GBP');
-    const fxData = await fxRes.json();
-    marketData.gbpzar = fxData.rates['ZAR']?.toFixed(2);
-    marketData.gbpusd = fxData.rates['USD']?.toFixed(2);
-  } catch(e) {}
 
-  // Gold and Oil via commodity API (free tier)
-  try {
-    const goldRes = await fetch('https://api.metals.live/v1/spot/gold');
-    const goldData = await goldRes.json();
-    marketData.gold = goldData[0]?.price?.toFixed(2);
-  } catch(e) {}
+document.getElementById("date-display").textContent = new Date().toLocaleDateString("en-GB", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
+loadWeather();
+loadFX();
 
-  const today = new Date().toLocaleDateString("en-GB", { weekday:"long", day:"numeric", month:"long", year:"numeric" });
 
-  const marketSummary = `
-GBP/ZAR: ${marketData.gbpzar || 'unavailable'}
-GBP/USD: ${marketData.gbpusd || 'unavailable'}
-Gold spot price: ${marketData.gold ? '$' + marketData.gold + '/oz' : 'unavailable'}
-(Note: for oil price and YTD % changes, use your best current knowledge)`;
-
-  const prompt = `You are a concise news briefing writer for a family hub dashboard. Today is ${today}.
-
-Write a structured daily briefing covering these 5 sections. Be punchy, informative and factual. Each section should take about 3 minutes to read.
-
-Use this EXACT format with these EXACT section headers:
-
-##GEOPOLITICAL##
-2-3 short paragraphs covering the most important global geopolitical developments right now.
-
-##UK##
-2-3 short paragraphs on the latest UK political, economic and social news.
-
-##SOUTH AFRICA##
-2-3 short paragraphs on the latest South African political, economic and social news.
-
-##SCIENCE##
-2-3 short paragraphs on a notable recent nature or science discovery or breakthrough.
-
-##MARKETS##
-Current market data (use these live figures where available, otherwise use your best knowledge):
-${marketSummary}
-Write 2-3 sentences summarising market conditions. Then on new lines write each indicator as:
-GBPZAR|${marketData.gbpzar || '?'}|+0.00%
-GBPUSD|${marketData.gbpusd || '?'}|+0.00%
-GOLD|${marketData.gold ? '$'+marketData.gold : '?'}|+0.00%
-OIL|?|+0.00%
-Fill in realistic YTD % changes based on your knowledge. Use + for gains, - for losses.
-
-Keep every section factual and current. No intros or sign-offs.`;
-
-  try {
-    const res = await fetch("https://text.pollinations.ai/" + encodeURIComponent(prompt), {
-      method: "GET"
-    });
-    if (!res.ok) throw new Error("API error");
-    const text = await res.text();
-    renderNews(text, marketData);
-  } catch(e) {
-    feed.innerHTML = `<div class="news-loading"><p>Could not load briefing. Please try refreshing.</p></div>`;
-  }
-}
-
-function renderNews(text, marketData) {
-  const feed = document.getElementById("news-feed");
-  const sections = [
-    { key: "##GEOPOLITICAL##", icon: "🌍", title: "Geopolitical Update" },
-    { key: "##UK##",           icon: "🇬🇧", title: "UK Developments" },
-    { key: "##SOUTH AFRICA##", icon: "🇿🇦", title: "South Africa" },
-    { key: "##SCIENCE##",      icon: "🔭", title: "Science & Nature" },
-    { key: "##MARKETS##",      icon: "📈", title: "Market Indicators" }
-  ];
-
-  let html = "";
-  for (let i = 0; i < sections.length; i++) {
-    const s = sections[i];
-    const nextKey = sections[i + 1]?.key;
-    const start = text.indexOf(s.key);
-    if (start === -1) continue;
-    const end = nextKey ? text.indexOf(nextKey) : text.length;
-    let content = text.slice(start + s.key.length, end === -1 ? text.length : end).trim();
-
-    if (s.key === "##MARKETS##") {
-      // Parse market indicator lines and prose separately
-      const lines = content.split('\n');
-      const prose = [], indicators = [];
-      for (const line of lines) {
-        const parts = line.split('|');
-        if (parts.length === 3) {
-          indicators.push({ label: parts[0].trim(), value: parts[1].trim(), change: parts[2].trim() });
-        } else if (line.trim()) {
-          prose.push(`<p>${line.trim()}</p>`);
-        }
-      }
-      let marketHtml = `<div class="news-card-body">${prose.join('')}</div>`;
-      if (indicators.length) {
-        marketHtml += `<div class="news-market-grid">`;
-        for (const ind of indicators) {
-          const isUp = !ind.change.startsWith('-');
-          const changeClass = isUp ? 'up' : 'down';
-          const arrow = isUp ? '▲' : '▼';
-          marketHtml += `<div class="news-market-item"><p class="news-market-label">${ind.label}</p><p class="news-market-value">${ind.value}</p><p class="news-market-change ${changeClass}">${arrow} ${ind.change}</p></div>`;
-        }
-        marketHtml += `</div>`;
-      }
-      html += `<div class="news-card"><div class="news-card-header"><span class="news-card-icon">${s.icon}</span><span class="news-card-title">${s.title}</span></div>${marketHtml}</div>`;
-    } else {
-      const paras = content.split('\n').filter(l => l.trim()).map(l => `<p>${l.trim()}</p>`).join('');
-      html += `<div class="news-card"><div class="news-card-header"><span class="news-card-icon">${s.icon}</span><span class="news-card-title">${s.title}</span></div><div class="news-card-body">${paras}</div></div>`;
-    }
-  }
-
-  const now = new Date().toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit' });
-  html += `<p class="news-timestamp">Briefing generated at ${now}</p>`;
-  feed.innerHTML = html || `<div class="news-loading"><p>Could not parse briefing. Try refreshing.</p></div>`;
-}
 </script>
 </body>
 </html>
