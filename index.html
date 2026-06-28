@@ -41,17 +41,17 @@
   .divider { border: none; border-top: 0.5px solid rgba(255,255,255,0.3); margin: 0.5rem 0 1rem; }
 
   /* Weather */
-  .weather-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 6px; }
-  .weather-card { border-radius: 10px; padding: 0.45rem 0.6rem; position: relative; overflow: hidden; border: none; }
+  .weather-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr; gap: 6px; }
+  .weather-card { border-radius: 10px; padding: 0.27rem 0.36rem; position: relative; overflow: hidden; border: none; }
   .weather-card .w-top { display: flex; align-items: flex-start; justify-content: space-between; }
-  .weather-card .w-emoji { font-size: 20px; line-height: 1; }
+  .weather-card .w-emoji { font-size: 14px; line-height: 1; }
   .weather-card .w-right { text-align: right; }
-  .weather-card .city { font-size: 13px; font-weight: 700; line-height: 1.2; }
-  .weather-card .local-time-label { font-size: 9px; font-weight: 500; opacity: 0.75; }
-  .weather-card .local-time { font-size: 13px; font-weight: 700; }
-  .weather-card .temp { font-size: 22px; font-weight: 700; line-height: 1; margin-top: 4px; }
-  .weather-card .desc { font-size: 10px; font-weight: 600; margin-top: 2px; opacity: 0.9; }
-  .weather-card .feels { font-size: 10px; font-weight: 500; margin-top: 1px; opacity: 0.75; }
+  .weather-card .city { font-size: 10px; font-weight: 700; line-height: 1.1; }
+  .weather-card .local-time-label { font-size: 7px; font-weight: 500; opacity: 0.75; }
+  .weather-card .local-time { font-size: 10px; font-weight: 700; }
+  .weather-card .temp { font-size: 16px; font-weight: 700; line-height: 1; margin-top: 2px; }
+  .weather-card .desc { font-size: 8px; font-weight: 600; margin-top: 1px; opacity: 0.9; }
+  .weather-card .feels { font-size: 8px; font-weight: 500; margin-top: 1px; opacity: 0.75; }
   .weather-sunny   { background: linear-gradient(135deg, #f6d365, #fda085); color: #5a2d00; }
   .weather-partly  { background: linear-gradient(135deg, #a1c4fd, #f6d365); color: #2a3a5a; }
   .weather-cloudy  { background: linear-gradient(135deg, #bdc3c7, #95a5a6); color: #2c3e50; }
@@ -107,7 +107,7 @@
     .banner { height: 220px; }
     .banner-title { font-size: 26px; }
     .drive-row { grid-template-columns: 1fr; }
-    .weather-grid { grid-template-columns: 1fr 1fr; }
+    .weather-grid { grid-template-columns: 1fr 1fr 1fr; }
   }
 </style>
 </head>
@@ -135,7 +135,7 @@
     <p class="section-label"><i class="ti ti-link"></i> Key Links</p>
     <hr class="divider">
     <!-- 3 columns matching weather card style -->
-    <div class="weather-grid" style="margin-bottom:0;">
+    <div class="weather-grid" style="margin-bottom:0; grid-template-columns: 1fr 1fr 1fr;">
 
       <!-- Phil & Quin Wedding -->
       <a class="weather-card" href="https://sayi.do/public/view-announcement/xlyDiZePEHgr7ONjwbRQLMgUJOw1/2026-02-14T141449425Z_41001cdb-89e8-bfb6-d7b8-80b4384ac217?party=-OPUQeQ9_MT6Ug7gDTMD&person=00000002-108c-1e7c-9d53-3d9a851aeb8b" target="_blank" style="background:linear-gradient(135deg,#7b0000,#e53e3e);color:#fff;text-decoration:none;display:block;">
@@ -156,6 +156,10 @@
           <p class="desc" style="margin-top:6px;">Google Drive</p>
         </div>
         <div class="subfolders" style="position:static;margin-top:6px;">
+          <a class="subfolder-card" href="https://photos.app.goo.gl/SH85FPMLujFptSUz7" target="_blank">
+            <i class="ti ti-cake drive-icon" style="font-size:15px;"></i>
+            <div><p class="subfolder-name" style="font-size:11px;">Parents 50th Wedding Anniversary</p><p class="subfolder-type">Google Photos</p></div>
+          </a>
           <a class="subfolder-card" href="https://drive.google.com/drive/folders/14nz8obfHI1LyIg-fKtQv_alnEp5Y4UP9?usp=share_link" target="_blank">
             <i class="ti ti-heart drive-icon" style="font-size:15px;"></i>
             <div><p class="subfolder-name" style="font-size:11px;">Sue & Wes Wedding Pics</p><p class="subfolder-type">Folder</p></div>
@@ -223,7 +227,8 @@ const locations = [
   { name: "London, UK",    lat: 51.5074,  lon: -0.1278,   tz: "Europe/London" },
   { name: "George, SA",    lat: -33.9648, lon: 22.4602,   tz: "Africa/Johannesburg" },
   { name: "New York, USA", lat: 40.7128,  lon: -74.0060,  tz: "America/New_York" },
-  { name: "Taipei, Taiwan",        lat: 25.0330,  lon: 121.5654,  tz: "Asia/Taipei" }
+  { name: "Taipei, Taiwan",        lat: 25.0330,  lon: 121.5654,  tz: "Asia/Taipei" },
+  { name: "Cape Town, SA", lat: -33.9249, lon: 18.4241,   tz: "Africa/Johannesburg" }
 ];
 const weatherEmojiDay = {0:"☀️",1:"☀️",2:"⛅",3:"☁️",45:"🌫️",48:"🌫️",51:"🌦️",53:"🌦️",55:"🌦️",61:"🌧️",63:"🌧️",65:"🌧️",71:"❄️",73:"❄️",75:"❄️",80:"🌧️",81:"🌧️",82:"🌧️",95:"⛈️",96:"⛈️",99:"⛈️"};
 const weatherEmojiNight = {0:"MOON",1:"MOON",2:"MOON",3:"☁️",45:"🌫️",48:"🌫️",51:"🌧️",53:"🌧️",55:"🌧️",61:"🌧️",63:"🌧️",65:"🌧️",71:"❄️",73:"❄️",75:"❄️",80:"🌧️",81:"🌧️",82:"🌧️",95:"⛈️",96:"⛈️",99:"⛈️"};
